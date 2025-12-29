@@ -1,0 +1,23 @@
+# Name of the workflow
+name: First Workflow
+
+# When to execute the workflow
+# workflow_dispatch: an event that waits for user to manually start this workflow
+on: workflow_dispatch
+
+# The jobs to perform when the workflow is executed
+jobs: 
+  # Indent, then name your job
+  first-job:
+    # Indent, then define job details
+    # runs-on: Specify the runner that will host the job's execution
+    # GitHub-hosted runners: https://docs.github.com/en/actions/reference/runners/github-hosted-runners#single-cpu-runners
+    runs-on: ubuntu-latest
+    # Define the steps for the job to perform
+    steps:
+      # Name each step for readability
+      - name: Print greeting
+      # run: The specific step to be taken
+        run: echo "Hello World!"
+      - name: Print goodbye
+        run: echo "Done - bye!"
